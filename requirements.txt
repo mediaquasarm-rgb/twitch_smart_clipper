@@ -1,25 +1,4 @@
-#define MyAppName "Twitch Smart Clipper"
-#define MyAppVersion "0.1.0"
-[Setup]
-AppId={{2F39D5CB-1F6A-4E73-81EF-452BB2E49E10}
-AppName={#MyAppName}
-AppVersion={#MyAppVersion}
-DefaultDirName={autopf}\Twitch Smart Clipper
-DefaultGroupName={#MyAppName}
-OutputDir=installer_output
-OutputBaseFilename=TwitchSmartClipper-Setup-Win10
-Compression=lzma2
-SolidCompression=yes
-PrivilegesRequired=lowest
-ArchitecturesAllowed=x64
-ArchitecturesInstallIn64BitMode=x64
-WizardStyle=modern
-[Files]
-Source: "dist\TwitchSmartClipper.exe"; DestDir: "{app}"; Flags: ignoreversion
-[Icons]
-Name: "{group}\Twitch Smart Clipper"; Filename: "{app}\TwitchSmartClipper.exe"
-Name: "{autodesktop}\Twitch Smart Clipper"; Filename: "{app}\TwitchSmartClipper.exe"; Tasks: desktopicon
-[Tasks]
-Name: desktopicon; Description: "Создать ярлык на рабочем столе"; Flags: unchecked
-[Run]
-Filename: "{app}\TwitchSmartClipper.exe"; Description: "Запустить Twitch Smart Clipper"; Flags: nowait postinstall skipifsilent
+pyinstaller==6.16.0
+numpy>=1.26,<3
+yt-dlp>=2025.1.1
+imageio-ffmpeg>=0.6.0
